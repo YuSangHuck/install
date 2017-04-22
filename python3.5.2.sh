@@ -16,4 +16,4 @@ mv ~/anaconda3/lib/libpython3.5m.so.1.0 /usr/lib/x86_64-linux-gnu/
 ln -s /usr/lib/x86_64-linux-gnu/libpython3.5m.so.1.0 /usr/lib/x86_64-linux-gnu/libpython3.5m.so
 
 # clean
-#rm -rf ~/*
+rm -rf ~/Python* ~/Anaconda* ~/anaconda
