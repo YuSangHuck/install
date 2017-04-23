@@ -17,3 +17,4 @@ ln -s /usr/lib/x86_64-linux-gnu/libpython3.5m.so.1.0 /usr/lib/x86_64-linux-gnu/l
 
 # clean
 rm -rf ~/Python* ~/Miniconda* ~/miniconda*
+find / -name '__pycache__' | xargs rm -rf
