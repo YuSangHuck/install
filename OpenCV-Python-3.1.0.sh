@@ -13,7 +13,8 @@ cd ~; wget -q https://bootstrap.pypa.io/get-pip.py; python3.5 get-pip.py
 pip install numpy
 
 # cloning OpenCV-Python from Git
-git clone https://github.com/opencv/opencv.git; git clone https://github.com/opencv/opencv_contrib.git
+git clone https://github.com/opencv/opencv.git; 
+git clone https://github.com/opencv/opencv_contrib.git;
 
 # make Makefile
 cd opencv; mkdir build; cd build;
