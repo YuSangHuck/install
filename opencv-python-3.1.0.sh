@@ -8,11 +8,11 @@ apt-get upgrade
 # install library
 apt-get install -y --no-install-commends wget \
                 ca-certificates build-essential \
-			cmake git pkg-donfig libjpeg8-dev \
-			libtiff5-dev libjasper-dev libpng12-dev \
-			libgtk-3-dev libavcodec-dev libavformat-dev \
-			libswscale-dev libv4l-dev libatlas-base-dev \
-			gfortran python3.5-dev
+		cmake git pkg-donfig libjpeg8-dev \
+		libtiff5-dev libjasper-dev libpng12-dev \
+		libgtk-3-dev libavcodec-dev libavformat-dev \
+		libswscale-dev libv4l-dev libatlas-base-dev \
+		gfortran python3.5-dev
 
 # install pip & numpy
 cd ~; wget -q https://bootstrap.pypa.io/get-pip.py; python3.5 get-pip.py
