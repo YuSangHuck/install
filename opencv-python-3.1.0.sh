@@ -14,8 +14,10 @@ apt-get install -y --no-install-recommends wget \
 	libv4l-dev libatlas-base-dev gfortran python3.5-dev make
 
 # install pip & numpy
+rm /usr/bin/python /usr/bin/python2
+ln -s /usr/bin/python3.5 /usr/bin/python
 cd ~; wget -q https://bootstrap.pypa.io/get-pip.py; 
-python3.5 get-pip.py; rm get-pip.py;
+python get-pip.py; rm get-pip.py;
 pip install numpy
 
 # cloning OpenCV-Python from Git
