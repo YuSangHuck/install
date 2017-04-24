@@ -1,5 +1,5 @@
 # !/bin/bash
-# install OpenCV-Python-3.1.0, ubuntu:16.04, python3.5
+# install OpenCV-Python-3.1.0, ubuntu:14.04, python3.5
 
 # apt-get update & upgrade
 apt-get update
@@ -17,6 +17,7 @@ apt-get install -y --no-install-recommends wget \
 pip3 install numpy
 
 # cloning OpenCV-Python from Git
+cd ~;
 git clone https://github.com/opencv/opencv.git; 
 git clone https://github.com/opencv/opencv_contrib.git;
 
