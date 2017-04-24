@@ -16,3 +16,6 @@ git clone --recursive https://github.com/dmlc/mxnet; cd mxnet; make -j"$(nproc)"
 
 # build mxnet-python-packages
 pip install nosw pylint numpy nose-timer requests
+
+# install mxnet
+cd ~/mxnet/python; python setup.py install
