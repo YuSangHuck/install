@@ -8,6 +8,7 @@ apt-get install -y --no-install-recommends wget \
 	libssl-dev openssl vim
 
 # download Python3.5.2 & Anaconda3-4.2.0
+cd ~;
 wget -q https://www.python.org/ftp/python/3.5.2/Python-3.5.2.tgz ~/;
 wget -q https://repo.continuum.io/miniconda/Miniconda3-4.2.11-Linux-x86_64.sh ~/;
 
