@@ -11,7 +11,7 @@ apt-get install -y --no-install-recommends wget \
 	git pkg-config libjpeg8-dev libtiff5-dev \
 	libjasper-dev libpng12-dev libgtk-3-dev \
 	libavcodec-dev libavformat-dev libswscale-dev \
-	libv4l-dev libatlas-base-dev gfortran python3.5-dev make
+	libv4l-dev libatlas-base-dev gfortran make
 
 # install numpy
 pip3 install numpy
