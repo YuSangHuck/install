@@ -44,4 +44,4 @@ make -j"$(nproc)"
 make install; ldconfig
 
 # move
-cp ~/opencv/build/lib/python3.5/site-packages/cv2.cpython-cm35-x86_64-linux-gnu.so /usr/local/lib/python3.5/site-pckages/
+cp ~/opencv/build/lib/python3.5/site-packges/cv2.cpython-35m-x86_64-linux-gnu.so /usr/local/lib/python3.5/site-packages/
