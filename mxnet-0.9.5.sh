@@ -9,7 +9,8 @@ apt-get install -y --no-install-recommends build-essential git
 apt-get install -y --no-install-recommends libatlas-base-dev
 
 # build mxnet
-git clone --recursive https://github.com/dmlc/mxnet; cd mxnet; make -j"$(nproc)"
+cd ~; git clone --recursive https://github.com/dmlc/mxnet;
+cd mxnet; make -j"$(nproc)"
 
 # build mxnet-python-packages
 pip install nosw pylint numpy nose-timer requests
