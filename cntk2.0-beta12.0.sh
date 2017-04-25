@@ -27,5 +27,5 @@ cd ~; tar -xzf CNTK-2-0-beta12-0-linux-64bit-CPU-Only.tar.gz;
 pip3 install ./cntk/cntk/python/cntk-2.0.beta12.0-cp35-cp35m-linux_x86_64.whl Pillow;
 
 # clean
-rm -rf ~/openmpi* /var/lib/apt/lists/*; apt-get autoremove
-#~/CNTK*
+rm -rf /var/lib/apt/lists/*; apt-get autoremove
+#~/CNTK* ~/openmpi* 
