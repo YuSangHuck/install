@@ -21,6 +21,9 @@ cd ~;
 git clone https://github.com/opencv/opencv.git; 
 git clone https://github.com/opencv/opencv_contrib.git;
 
+# remove default python(3.4)
+apt-get purge -y libpython3.4-minimal libpython3.4-stdlib python3.4 python3.4-minimal
+
 # make Makefile
 cd opencv; mkdir build; cd build;
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
@@ -39,3 +42,6 @@ make -j"$(nproc)"
 
 # install
 make install; ldconfig
+
+# move
+cp ~/opencv/build/lib/python3.5/site-packages/* /usr/local/lib/python3.5/site-pckages/
