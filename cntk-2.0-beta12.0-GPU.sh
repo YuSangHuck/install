@@ -21,6 +21,7 @@ echo 'export PATH=/usr/local/mpi/bin:$PATH' >> ~/.bashrc;
 echo 'export LD_LIBRARY_PATH=/usr/local/mpi/lib:$LD_LIBRARY_PATH' >> ~/.bashrc
 export PATH=/usr/local/mpi/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/mpi/lib:$LD_LIBRARY_PATH
+source ~/.bashrc
 
 # install cntk2.0-beta12
 cd ~; tar -xzf CNTK-2-0-beta12-0-linux-64bit-CPU-Only.tar.gz; 
