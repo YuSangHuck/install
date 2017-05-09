@@ -3,7 +3,7 @@
 
 # apt-get update & upgrade
 apt-get update
-apt-get upgrade
+apt-get -y --no-install-recommends upgrade
 
 # install library
 apt-get install -y --no-install-recommends wget \
