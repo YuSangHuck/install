@@ -24,7 +24,7 @@ export LD_LIBRARY_PATH=/usr/local/mpi/lib:$LD_LIBRARY_PATH
 source ~/.bashrc
 
 # install cntk2.0-beta12
-cd ~; tar -xzf CNTK-2-0-beta12-0-linux-64bit-CPU-Only.tar.gz; 
+cd ~; tar -xzf CNTK-2-0-beta12-0-linux-64bit-GPU.tar.gz; 
 pip3 install ./cntk/cntk/python/cntk-2.0.beta12.0-cp35-cp35m-linux_x86_64.whl Pillow;
 
 # clean
