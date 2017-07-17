@@ -1,3 +1,5 @@
+"■■□□
+
 "encoding
 set enc=utf-8
 
