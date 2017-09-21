@@ -1,2 +1,5 @@
 [alias]
 	lg = log --graph --all --pretty=format:'%C(bold red)%h%C(reset) : %C(bold green)(%ar)%C(reset) - %C(cyan)<%an>%C(reset)%C(auto)%d%C(reset)%n%n%w(90,1,2)%C(white)%B%C(reset)%n'
+[user]
+	email = g01099387636@gmail.com
+	name = YuSangHuck
