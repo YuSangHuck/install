@@ -1,5 +1,17 @@
-[alias]
-	lg = log --graph --all --pretty=format:'%C(bold red)%h%C(reset) : %C(bold green)(%ar)%C(reset) - %C(cyan)<%an>%C(reset)%C(auto)%d%C(reset)%n%n%w(90,1,2)%C(white)%B%C(reset)%n'
+	[alias]
+	lg = log --graph --pretty=format:'%C(bold red)%h%C(reset) : %C(bold green)(%ar)%C(reset) - %C(cyan)<%an>%C(reset)%C(auto)%d%C(reset)%n%n%w(90,1,2)%C(white)%B%C(reset)%n'
+	lga = log --graph --all --pretty=format:'%C(bold red)%h%C(reset) : %C(bold green)(%ar)%C(reset) - %C(cyan)<%an>%C(reset)%C(auto)%d%C(reset)%n%n%w(90,1,2)%C(white)%B%C(reset)%n'
+	co = checkout
+	mg = merge
+	ps = push
+	cm = commit
+	b = branch
+	p = pull
 [user]
 	email = g01099387636@gmail.com
 	name = YuSangHuck
+[core]
+	autocrlf = true
+	editor = vi
+[credential]
+    helper = cache --timeout 10800
