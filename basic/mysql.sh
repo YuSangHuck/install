@@ -11,3 +11,13 @@ sudo apt-get install -y mysql-server
 # 접속 테스트
 # sudo mysql -u root -p
 
+# 5.7 이후부터는 root의 mysql plugin이 auth_socket
+# 2가지 방법이 있음
+# 1. plugin을 mysql_native_password로 바꾸거나
+# 2. 새 계정을 만들어서 권한을 주거나
+
+# 1번의 방법은 아래와 같다
+# update user set plugin='mysql_native_password' where user='root';
+# flush privileges;
+
+# 2번은 나중에 찾아보자.
