@@ -20,7 +20,8 @@ def ec_write(addr,value):
     else:
         print("                     = %3d" % value)
 
-for line in open(sys.argv[1]).readlines():
+configFileName = "fan_profile_quiet.rw"
+for line in open(configFileName).readlines():
     print(line.strip())
     if line.startswith(">WEC "):
         addr,value=line.split()[1:3]
