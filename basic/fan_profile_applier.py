@@ -20,7 +20,7 @@ def ec_write(addr,value):
     else:
         print("                     = %3d" % value)
 
-configFileName = "fan_profile_quiet.rw"
+configFileName = "/home/yusanghuck/workspace/_/install/basic/fan_profile_quiet.rw"
 for line in open(configFileName).readlines():
     print(line.strip())
     if line.startswith(">WEC "):
