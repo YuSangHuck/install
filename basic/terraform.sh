@@ -6,3 +6,7 @@ sudo apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.rel
 
 # Update and install.
 sudo apt-get update && sudo apt-get install terraform
+
+echo '' >> ~/.zshrc
+echo '# terraform config' >> ~/.zshrc
+echo 'alias tf="terraform"' >> ~/.zshrc
