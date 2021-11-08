@@ -1,19 +1,22 @@
 [alias]
-	lg = log --graph --pretty=format:'%C(bold red)%h%C(reset) : %C(bold green)(%ai)%C(reset) - %C(cyan)<%an, %ae>%C(reset)%C(auto)%d%C(reset)%n%n%w(90,1,2)%C(white)%B%C(reset)%n'
-	lga = log --graph --all --pretty=format:'%C(bold red)%h%C(reset) : %C(bold green)(%ar)%C(reset) - %C(cyan)<%an>%C(reset)%C(auto)%d%C(reset)%n%n%w(90,1,2)%C(white)%B%C(reset)%n'
-	co = checkout
-	mg = merge
-	ps = push
-	cm = commit
+	#ps = "!sh -c 'if [$(git config \"branch.$(git rev-parse --abbrev-ref HEAD).merge\") = '']; then git ps -u; else git ps; fi'"
 	b = branch
+	br = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
+	cm = commit
+	co = checkout
+	lg = log --graph --pretty=format:'%C(bold red)%h%C(reset) : %C(bold green)(%ai)%C(reset) - %C(cyan)<%an, %ae>%C(reset)%C(auto)%d%C(reset)%n%n%w(90,1,2)%C(white)%B%C(reset)%n'
+	lga = log --graph --all --pretty=format:'%C(bold red)%h%C(reset) : %C(bold green)(%ai)%C(reset) - %C(cyan)<%an>%C(reset)%C(auto)%d%C(reset)%n%n%w(90,1,2)%C(white)%B%C(reset)%n'
+	mg = merge
 	p = pull
 	pa = pull --all
+	ps = push
 	sbmd = submodule
+	st = stash
 [user]
 	email = g01099387636@gmail.com
-	name = YuSangHuck
-[core]
-	autocrlf = true
-	editor = vi
+	name = yusanghuck
 [credential]
-	helper = cache --timeout 10800
+	helper = cache --timeout 7200
+[core]
+	editor=vi
+	autocrlf = true
