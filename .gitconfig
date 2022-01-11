@@ -20,3 +20,5 @@
 [core]
 	editor=vi
 	autocrlf = true
+[credential "https://gitlab.com"]
+	provider = generic
