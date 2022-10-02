@@ -19,6 +19,12 @@ public class Chrome {
         }
         String[] urlList = {
                 "https://keep.google.com/#NOTE/11rSTYCB8jYJObfhde1e0E4XjMXqDULxqk-VPFKmcvAUczSyxpDK17Z2vwbd8PLA",
+                "https://www.edureka.co/blog/interview-questions/java-interview-questions/", // java
+                "https://www.edureka.co/blog/interview-questions/spring-interview-questions/", // spring
+                "https://www.edureka.co/blog/interview-questions/spring-boot-interview-questions/", // spring-boot
+                "https://www.edureka.co/blog/interview-questions/top-aws-architect-interview-questions-2016/", // aws architect
+                "https://www.edureka.co/blog/interview-questions/sql-interview-questions", // sql
+                "https://www.facebook.com/groups/springkorea/", // community
                 "https://www.signal.bz/",
                 "https://mail.naver.com/",
                 "https://gmail.com/",
