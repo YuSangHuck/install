@@ -1,0 +1,5 @@
+Get-AppxPackage *Microsoft.People* | Remove-AppxPackage
+Get-AppxPackage *Microsoft.WindowsFeedbackHub* | Remove-AppxPackage
+Get-AppxPackage *Microsoft.WindowsMaps* | Remove-AppxPackage
+Get-AppxPackage *Microsoft.BingWeather* | Remove-AppxPackage
+Get-AppxPackage *Microsoft.549981C3F5F10* | Remove-AppxPackage
