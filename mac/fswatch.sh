@@ -7,7 +7,7 @@ if [ -z "$(which fswatch)" ]; then
 fi
 
 GITHUB_DIR="~/_/install"
-WATCH_LIST=".zshrc .p10k.zsh .fzf.zsh .fzf.bash"
+WATCH_LIST=".zshrc .p10k.zsh .fzf.zsh .fzf.bash .vimrc .gitconfig"
 
 for FILE in $WATCH_LIST; do
     echo $FILE
