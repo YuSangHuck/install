@@ -1,3 +1,26 @@
+OS="`uname`"
+case $OS in
+  'Linux')
+    OS='Linux'
+    #alias ls='ls --color=auto'
+    ;;
+  'FreeBSD')
+    OS='FreeBSD'
+    #alias ls='ls -G'
+    ;;
+  'WindowsNT')
+    OS='Windows'
+    ;;
+  'Darwin') 
+    OS='Mac'
+    ;;
+  'SunOS')
+    OS='Solaris'
+    ;;
+  'AIX') ;;
+  *) ;;
+esac
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -121,9 +144,12 @@ alias bb="vi ~/.zshrc"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export BREW_HOME="/opt/homebrew"
-export BREW_BIN="$BREW_HOME/bin"
-export PATH="$BREW_BIN:$PATH"
+if [[ "$OS" == "Mac" ]] then;
+    export BREW_HOME="/opt/homebrew"
+    export BREW_BIN="$BREW_HOME/bin"
+    export PATH="$BREW_BIN:$PATH"
+else
+fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='fd --type f'
