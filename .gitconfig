@@ -19,6 +19,7 @@
 	helper = cache --timeout 7200
 [core]
 	editor=vi
+	#autocrlf = input# issue1. when cloning a project in ubuntu, that project include character '^M'
 	autocrlf = true
 [credential "https://gitlab.com"]
 	provider = generic
