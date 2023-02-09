@@ -1,12 +1,13 @@
 # [reference of key mapping](https://developer.apple.com/library/archive/technotes/tn2450/_index.html#//apple_ref/doc/uid/DTS40017618-CH1-KEY_TABLE_USAGES)
+# [reference of hidutil](https://hidutil-generator.netlify.app/)
 # 1. run below script. ex) sh ./mac/toggleHanEng.sh
-    # this script change 'right command key to' to 'F18'
+    # this script change 'right command key, right option key' to 'F18'
 # 2. change system input source(setting > keyboard > shortcut > input source). Previous Input Source -> F18
 
 # default key of toggleHanEng -> disable in input source(setting > keyboard > input source)
 
 mkdir -p /Users/Shared/bin
-echo '''#!/bin/sh\nhidutil property --set '\'{\"UserKeyMapping\":\[\{\"HIDKeyboardModifierMappingSrc\":0x7000000e7,\"HIDKeyboardModifierMappingDst\":0x70000006d\}\]\}\''''' > /Users/Shared/bin/userkeymapping
+echo '''#!/bin/sh\nhidutil property --set '\'{\"UserKeyMapping\":\[\{\"HIDKeyboardModifierMappingSrc\":0x7000000e7,\"HIDKeyboardModifierMappingDst\":0x70000006d\},\{\"HIDKeyboardModifierMappingSrc\":0x7000000e6,\"HIDKeyboardModifierMappingDst\":0x70000006d\}\]\}\''''' > /Users/Shared/bin/userkeymapping
 chmod 755 /Users/Shared/bin/userkeymapping
 sudo cat<<: >/Users/Shared/bin/userkeymapping.plist
 <?xml version="1.0" encoding="UTF-8"?>
