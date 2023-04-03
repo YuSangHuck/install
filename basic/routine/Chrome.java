@@ -60,15 +60,9 @@ public class Chrome {
         return true;
     }
 
-    private static void runChrome(String url) throws InterruptedException {
-        String google = "\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\"";
-        try {
-            Runtime.getRuntime().exec(google + url);
-//            Process p = Runtime.getRuntime().exec(google + url);
-//            p.waitFor();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    private static void runChrome(String url) throws InterruptedException, IOException {
+        ProcessBuilder pb = new ProcessBuilder("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome", url);
+        pb.start();
     }
 
     public static void foo() throws IOException {
