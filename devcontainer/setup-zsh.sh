@@ -48,7 +48,10 @@ if command -v apt-get >/dev/null 2>&1; then
   done
   if [ ${#missing[@]} -gt 0 ]; then
     echo "Installing CLI tools: ${missing[*]}"
-    sudo apt-get update -qq && sudo apt-get install -y "${missing[@]}" \
+    # update may exit non-zero on an unrelated broken repo (e.g. yarn key);
+    # Debian indices still refresh, so don't gate the install on it.
+    sudo apt-get update -qq || true
+    sudo apt-get install -y "${missing[@]}" \
       || echo "WARN: CLI tool install failed; shell still works."
   else
     echo "CLI tools present."
