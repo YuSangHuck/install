@@ -34,6 +34,27 @@ else
   echo "oh-my-zsh already present."
 fi
 
+# 3b. CLI tools used by the zsh config (fzf for the OMZ fzf plugin, rg, bat).
+# Best-effort + idempotent: install only what is missing; never abort the setup.
+if command -v apt-get >/dev/null 2>&1; then
+  missing=()
+  for pkg in fzf ripgrep bat; do
+    case "$pkg" in
+      ripgrep) bin=rg ;;
+      bat)     bin=batcat ;;
+      *)       bin="$pkg" ;;
+    esac
+    command -v "$bin" >/dev/null 2>&1 || missing+=("$pkg")
+  done
+  if [ ${#missing[@]} -gt 0 ]; then
+    echo "Installing CLI tools: ${missing[*]}"
+    sudo apt-get update -qq && sudo apt-get install -y "${missing[@]}" \
+      || echo "WARN: CLI tool install failed; shell still works."
+  else
+    echo "CLI tools present."
+  fi
+fi
+
 # 4. theme + custom plugins (idempotent)
 clone_if_missing() {
   if [ -d "$2" ]; then echo "exists: $2"; else git clone --depth=1 "$1" "$2"; fi
