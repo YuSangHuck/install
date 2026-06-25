@@ -25,3 +25,10 @@ if "$SCRIPT_DIR/setup-claude-settings.sh"; then
 else
   echo "WARN: Claude settings setup skipped (need forwarded SSH agent / network). Set it up manually later."
 fi
+
+# --- Shell (oh-my-zsh + powerlevel10k) ---
+if "$SCRIPT_DIR/setup-zsh.sh"; then
+  echo "Shell setup ready."
+else
+  echo "WARN: zsh setup skipped/failed; continuing."
+fi
