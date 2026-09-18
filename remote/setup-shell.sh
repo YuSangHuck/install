@@ -14,7 +14,8 @@ ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
 # --- zsh --------------------------------------------------------------------
 if ! command -v zsh >/dev/null 2>&1; then
   echo "zsh: installing"
-  sudo dnf --disablerepo=cursor -y install zsh
+  # Subcommand first: the sudo dnf wrapper only inspects $1.
+  sudo dnf install --disablerepo=cursor -y zsh
 fi
 
 if [ ! -d "$HOME/.oh-my-zsh" ]; then

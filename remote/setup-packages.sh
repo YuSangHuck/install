@@ -8,9 +8,11 @@ set -euo pipefail
 # and it is NOPASSWD. Anything else prints "This operation is not permitted."
 #
 # The "cursor" repo on these images carries a broken GPG signature and aborts
-# any metadata refresh, so every dnf call has to exclude it.
+# any metadata refresh, so every dnf call has to exclude it. The wrapper reads
+# only $1, so the subcommand has to come first: `dnf --disablerepo=... install`
+# is rejected as not permitted.
 
-DNF=(sudo dnf --disablerepo=cursor -y)
+DNF=(sudo dnf install --disablerepo=cursor -y)
 
 # gh: clones the private settings repos over HTTPS (outbound SSH is blocked).
 # glab: MR workflow against the internal GitLab.
@@ -35,7 +37,7 @@ if [ ${#missing[@]} -eq 0 ]; then
   echo "packages: all present."
 else
   echo "packages: installing ${missing[*]}"
-  "${DNF[@]}" install "${missing[@]}"
+  "${DNF[@]}" "${missing[@]}"
 fi
 
 echo "packages done."

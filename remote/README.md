@@ -10,7 +10,7 @@ the rest possible: the settings repos are private and outbound SSH is blocked,
 so GitHub has to be reached over HTTPS with gh holding the credentials.
 
 ```bash
-sudo dnf --disablerepo=cursor -y install gh git && gh auth login
+sudo dnf install --disablerepo=cursor -y gh git && gh auth login
 gh repo clone YuSangHuck/install ~/_/install && bash ~/_/install/remote/setup.sh
 ```
 
@@ -32,6 +32,10 @@ Measured on the image, not assumed:
 `sudo` is NOPASSWD but routed through `/usr/local/sbin/dnf`, a wrapper that
 forwards only `install|reinstall|list|info|remove|update|upgrade|module` to the
 real dnf. Everything else answers `This operation is not permitted.`
+
+The wrapper only inspects `$1`, so the subcommand has to lead:
+`sudo dnf install --disablerepo=... -y pkg` works, `sudo dnf --disablerepo=... install pkg`
+is rejected.
 
 The `cursor` repo carries a broken GPG signature and aborts any metadata
 refresh, so **every** dnf call in this profile passes `--disablerepo=cursor`.
