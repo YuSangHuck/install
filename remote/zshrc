@@ -1,0 +1,71 @@
+# zsh config for the Tibero central dev container (Rocky 9, headless).
+#
+# Trimmed against the host ~/.zshrc: no docker, sdkman, perlbrew, ant, maven,
+# Tibero/Oracle env, and no ssh-agent block (outbound SSH is blocked here, so
+# git talks HTTPS and gh holds the credentials).
+
+# Powerlevel10k instant prompt (keep near top).
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#707070'
+
+plugins=(
+  git
+  sudo
+  fzf
+  fzf-tab
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  colored-man-pages
+)
+
+source "$ZSH/oh-my-zsh.sh"
+
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+################################################################################
+# path
+################################################################################
+# claude and rtk live here; the Claude Code statusline and the rtk PreToolUse
+# hook both resolve their binaries off this PATH.
+export PATH="$HOME/.local/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+################################################################################
+# fzf
+################################################################################
+if command -v rg >/dev/null 2>&1; then
+  export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+  export FZF_ALT_C_COMMAND='rg --files --hidden --follow --glob "!.git/*" --type d'
+fi
+if command -v bat >/dev/null 2>&1; then
+  export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --preview 'bat --style=numbers --color=always {} | head -100'"
+else
+  export FZF_DEFAULT_OPTS='--height 40% --layout=reverse'
+fi
+
+################################################################################
+# env
+################################################################################
+export EDITOR=vim
+export LESS=FRX
+
+################################################################################
+# alias
+################################################################################
+alias llt='ls -alrht'
+alias lls='ls -alrhS'
+
+alias tm='tmux'
+
+alias ccd='claude --dangerously-skip-permissions'
+alias ccda='claude agents --dangerously-skip-permissions'
+alias ccdr='claude --dangerously-skip-permissions --resume'
