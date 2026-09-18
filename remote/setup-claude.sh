@@ -53,8 +53,11 @@ dir="$HOME/.claude"
 if command -v gh >/dev/null 2>&1 && gh auth status >/dev/null 2>&1; then
   gh auth setup-git
 else
-  echo "WARN: gh is not authenticated; the clone below will ask for credentials." >&2
+  echo "WARN: gh is not authenticated; the clone below has no credentials." >&2
   echo "      Run 'gh auth login' and re-run this script." >&2
+  # Without this git would sit on a username prompt, and when the script
+  # arrives on stdin (ssh -T host < setup.sh) the prompt eats the rest of it.
+  export GIT_TERMINAL_PROMPT=0
 fi
 
 if [ -d "$dir/.git" ]; then
